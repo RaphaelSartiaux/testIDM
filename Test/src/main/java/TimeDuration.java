@@ -4,41 +4,42 @@ public class TimeDuration {
 	private int minute;
 	private int hour;
 
-	public TimeDuration(int second) throws BadBadValueException {
-		if(second<0) {
+	public TimeDuration(int i) throws BadBadValueException {
+		this.second=i;
+		if(this.second<0) {
 			throw new BadBadValueException();
 		}
 		else {
-			whatTime(second);
-			System.out.println(second);
-			if (second<3600){
+			whatTime(this.second);
+			
+			if (this.second<3600){
 				do{
 					minute=minute+1;
-					second=second-60;
-				}while (second<60);
-				System.out.println(minute);
+					this.second=this.second-60;
+				}while (this.second>60);
 			}
 		}
 		
 		
 	}
 	private int whatTime(int second) {
-		while (second>3600) {
+		while (second>=3600) {
 			hour=hour+1;
 			second=second-3600;
 		}
+		this.second=second;
 		return hour;
 	}
 	@Override
 	public String toString() {
 		if(hour>0) {
-			return hour+"h "+minute+"m "+second+"s";
+			return hour+"h "+minute+"m "+this.second+"s";
 		}
 		else if(minute>0) {
-			return minute+"m "+second+"s";
+			return minute+"m "+this.second+"s";
 		}
 		else {
-			return second+"s";
+			return this.second+"s";
 		}
 	}
 	
