@@ -20,6 +20,7 @@ public class TimeDuration {
 			}
 		}
 		
+		
 	}
 	private int whatTime(int second) {
 		while (second>3600) {

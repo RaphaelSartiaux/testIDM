@@ -5,6 +5,7 @@ public class App {
 		// TODO Auto-generated method stub
 		TimeDuration t = new TimeDuration(3721);
 		
+		
 		System.out.println(t.toString());
 	}
 
